@@ -1,1 +1,47 @@
-<p>signin works!</p>
+<form  [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+
+  <div class="form-group">
+    <label for="signin_login">Connectez-vous
+    </label>
+    <div class="input-group">
+      <input formControlName="login"  type="email" 
+        class="is-valid form-control rounded-left ng-pristine ng-valid ng-touched"
+        [ngClass]="{ 'is-invalid': submitted && f['login'].errors }">
+      <div class="input-group-append">
+        <span class="input-group-text">
+          <span class="fa fa-at">
+          </span>
+        </span>
+      </div>
+
+
+      <div *ngIf="submitted && f['login'].errors" class="invalid-feedback">
+            <div *ngIf="f['login'].errors['required']">Email is required</div>
+            <div *ngIf="f['login'].errors['login']">Email is invalid</div>
+          </div>
+      <!---->
+    </div>
+  </div>
+  <!---->
+
+
+  <div class="form-group">
+    <label for="signin_passe">Laissez-passer
+    </label>
+    <div class="input-group">
+      <input id="signin_passe" title="Passe" type="password" formControlName="passe" 
+        class="is-valid form-control rounded-left ng-untouched ng-pristine ng-valid">
+      <div class="input-group-append">
+        <span class="input-group-text">
+          <span class="fa fa-lock">
+          </span>
+        </span>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <!---->
+
+  <button type="submit" class="btn btn-secondary"> connexion
+  </button>
+</form>

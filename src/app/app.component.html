@@ -1,1 +1,30 @@
-Works dsssssssssssssssssssssssssssssssssss
+  <main>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" routerLink="/">
+        <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+          <rect x="0" y="0" width="10" height="10" rx="15" ry="15" fill="#0F9D58"/>
+          <rect x="0" y="11" width="10" height="10" rx="15" ry="15" fill="#F4B400"/>
+          <rect x="11" y="0" width="10" height="10" rx="15" ry="15" fill="#DB4437"/>
+          <rect x="11" y="11" width="10" height="10" rx="15" ry="15" fill="#4285F4"/>
+        </svg>
+        Color Picker Game
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <span class="navbar-text">
+          %email%
+        </span>
+        <ul class="navbar-nav">
+          <li  class="nav-item">
+            <a routerLink="/player/signout" class="nav-link">signout</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/player/signin" class="nav-link">signin</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  
+    <router-outlet></router-outlet>
+  </main>

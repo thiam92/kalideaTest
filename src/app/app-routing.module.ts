@@ -11,6 +11,9 @@ const appRoutes: Routes = [
   { path: 'player/signin', component: SigninComponent },
   { path: 'player/signout', component: SignoutComponent },
   { path: '', component: AccueilComponent },
+  
+
+
   // { path: '**', component: AppComponent }
 ];
 

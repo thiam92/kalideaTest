@@ -1,7 +1,7 @@
 <form  [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
 
   <div class="form-group">
-    <label for="signin_login">Connectez-vous
+    <label for="signin_login">Login
     </label>
     <div class="input-group">
       <input formControlName="login"  type="email" 
@@ -26,22 +26,30 @@
 
 
   <div class="form-group">
-    <label for="signin_passe">Laissez-passer
+    <label for="signin_passe">Passe
     </label>
     <div class="input-group">
       <input id="signin_passe" title="Passe" type="password" formControlName="passe" 
-        class="is-valid form-control rounded-left ng-untouched ng-pristine ng-valid">
+        class="is-valid form-control rounded-left ng-untouched ng-pristine ng-valid"
+        [ngClass]="{ 'is-invalid': submitted && f['passe'].errors }">
       <div class="input-group-append">
         <span class="input-group-text">
           <span class="fa fa-lock">
           </span>
         </span>
       </div>
+      <div *ngIf="f['passe'].errors" class="invalid-feedback">
+        <div *ngIf="f['passe'].errors['required']">Password is required</div>
+        <div *ngIf="f['passe'].errors['minlength']">
+          Password must be at least 4 characters
+        </div>
+      </div>
+
       <!---->
     </div>
   </div>
   <!---->
 
-  <button type="submit" class="btn btn-secondary"> connexion
+  <button type="submit" [disabled]="userForm.invalid" class="btn btn-secondary"> connexion
   </button>
 </form>

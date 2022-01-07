@@ -13,6 +13,7 @@ import { PlayerService } from '../player.service';
 })
 export class SigninComponent implements OnInit {
  
+  showError : boolean = false;
   //  @Output() public  email = new EventEmitter();
   @Output() email = new EventEmitter<string>();
 
@@ -76,6 +77,12 @@ export class SigninComponent implements OnInit {
           this.router.navigate(['/']);
         }
       
+      },
+
+      (eror)=> {
+    
+        this.showError=true;
+        
       }
 
     )

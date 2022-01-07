@@ -13,22 +13,24 @@ export class AppComponent implements OnInit , OnDestroy {
   email : any;
   connected: boolean = false;
   constructor( private  playerService : PlayerService) { }
+ 
+ 
   ngOnDestroy(): void {
-    alert("destroy App component storagee")
     localStorage.removeItem('myData')
   }
  
   ngOnInit(): void {
-   alert("APP component")
   
-   if(localStorage.getItem('myData') != null) {
-     this.connected= true
-   alert(localStorage.getItem('myData'))
-  }
+  // this.email=  this.playerService.player?.email
 
-  else {
-    alert("enter APP COMPO§NE§NT")
-  }
+  //  if(localStorage.getItem('myData') != null) {
+  //    this.connected= true
+   
+  // }
+
+  // else {
+  
+  // }
   
   }
 

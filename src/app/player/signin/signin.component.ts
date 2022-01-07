@@ -69,13 +69,11 @@ export class SigninComponent implements OnInit {
         if(data) {
          // recuperer l'objet 
           this.player = data;
-          alert(JSON.stringify(this.player))
          // Send Id Player 
           localStorage.setItem('myData', JSON.stringify(this.player))
          
           
           this.router.navigate(['/']);
-          // this.email.emit(formValue['login']);
         }
       
       }

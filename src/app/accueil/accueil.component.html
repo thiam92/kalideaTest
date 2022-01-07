@@ -1,6 +1,6 @@
 <h1>Index</h1>
 <div *ngIf="affichOngletPlayer" >
-    <a  routerlink="/play/start" class="btn btn-secondary" >New Game</a>
+    <a  routerlink="/play/start" (click)="clickEvent()" class="btn btn-secondary" >New Game</a>
   </div>
  
   <div *ngIf="!affichOngletPlayer">

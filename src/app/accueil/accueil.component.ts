@@ -11,16 +11,20 @@ export class AccueilComponent implements OnInit, OnDestroy {
 affichOngletPlayer : boolean = false
   constructor(private router : Router,private  playerService : PlayerService) { }
   ngOnDestroy(): void {
-    alert("destroy")
+ 
     localStorage.removeItem('myData')
+    this.affichOngletPlayer = false;
   }
 
   ngOnInit(): void {
-    alert("Accueik")
-    alert(localStorage.getItem('myData'));
-  if(localStorage.getItem('myData') != null) {
+   
+    if(localStorage.getItem('myData') != null) {
     this.affichOngletPlayer = true;
+    }
   }
+
+  clickEvent(){
+    this.router.navigate(['/play/start']);
   }
 
 }
